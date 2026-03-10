@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Imperial Royal Wedding | Agung & Fia</title>
+  <title>Imperial Royal Wedding | Andika & Syakila</title>
   <!-- Google Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Great+Vibes&family=Poppins:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -590,7 +590,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 2rem;
+      gap: 4rem;
       position: relative;
       z-index: 2;
     }
@@ -732,14 +732,6 @@
     .timeline-item.right .timeline-dot {
       left: -40px;
     }
-
-    /* Ikon berbeda untuk setiap momen */
-    .timeline-item:nth-child(1) .timeline-dot i { content: "\f004"; } /* heart */
-    .timeline-item:nth-child(2) .timeline-dot i { content: "\f004"; } /* heart */
-    .timeline-item:nth-child(3) .timeline-dot i { content: "\f004"; } /* heart */
-    .timeline-item:nth-child(4) .timeline-dot i { content: "\f004"; } /* heart */
-
-    /* Garis penghubung dari dot ke konten - dihilangkan karena sudah ada timeline line */
 
     /* Responsive Timeline */
     @media (max-width: 768px) {
@@ -1316,9 +1308,354 @@
       75% { transform: scale(1.2); color: #ff6b6b; }
     }
 
+    /* NEW ADDITIONS - PREMIUM FEATURES */
+    
+    /* 1. Save the Date Button */
+    .save-date-btn {
+      position: fixed;
+      top: 30px;
+      right: 30px;
+      background: var(--gradient-gold);
+      color: white;
+      padding: 1.2rem 2.5rem;
+      border-radius: 60px;
+      border: 3px solid var(--gold-light);
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+      cursor: pointer;
+      z-index: 998;
+      font-weight: 700;
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+      transition: all 0.4s;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      animation: slideInRight 1s ease;
+    }
+
+    @keyframes slideInRight {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    .save-date-btn:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 20px 40px rgba(212, 175, 55, 0.6);
+    }
+
+    .save-date-btn i {
+      font-size: 1.5rem;
+    }
+
+    /* 2. Weather Widget */
+    .weather-widget {
+      position: fixed;
+      top: 30px;
+      left: 30px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(15px);
+      color: var(--brown-darker);
+      padding: 1rem 2rem;
+      border-radius: 60px;
+      border: 3px solid var(--gold-light);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      z-index: 998;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      animation: slideInLeft 1s ease;
+    }
+
+    @keyframes slideInLeft {
+      from { transform: translateX(-100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    .weather-widget i {
+      color: var(--gold);
+      font-size: 1.8rem;
+    }
+
+    .weather-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .weather-temp {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    .weather-desc {
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+
+    /* 3. Guest Book Stats */
+    .guest-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-top: 2rem;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 60px;
+      border: 3px solid var(--gold-light);
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 1.1rem;
+      color: var(--brown);
+      margin-top: 0.5rem;
+    }
+
+    /* 4. Share Wedding Button */
+    .share-wedding {
+      position: fixed;
+      bottom: 130px;
+      right: 40px;
+      background: var(--gradient-gold);
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      cursor: pointer;
+      z-index: 998;
+      border: 4px solid var(--gold-light);
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+      transition: all 0.4s;
+      animation: pulse-share 2s infinite;
+    }
+
+    @keyframes pulse-share {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .share-wedding:hover {
+      transform: rotate(360deg) scale(1.2);
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+    }
+
+    .share-tooltip {
+      position: absolute;
+      right: 70px;
+      background: white;
+      color: var(--brown-darker);
+      padding: 0.8rem 1.5rem;
+      border-radius: 40px;
+      font-size: 1rem;
+      font-weight: 600;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+      box-shadow: var(--shadow-lg);
+      border: 2px solid var(--gold);
+    }
+
+    .share-wedding:hover .share-tooltip {
+      opacity: 1;
+      visibility: visible;
+      right: 80px;
+    }
+
+    /* 5. Progress Bar */
+    .progress-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: transparent;
+      z-index: 1000;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: var(--gradient-gold);
+      width: 0%;
+      border-radius: 0 3px 3px 0;
+      box-shadow: 0 0 20px var(--gold);
+      transition: width 0.3s ease;
+    }
+
+    /* 6. Virtual Guest Book Counter */
+    .guest-counter {
+      background: white;
+      border-radius: 50px;
+      padding: 1rem 2rem;
+      display: inline-block;
+      margin: 2rem auto;
+      border: 3px solid var(--gold);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .guest-counter i {
+      color: var(--gold);
+      margin-right: 1rem;
+    }
+
+    /* 7. Photo Filter Buttons */
+    .gallery-filters {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: transparent;
+      border: 3px solid var(--gold-light);
+      color: var(--brown);
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.4s;
+      font-size: 1.1rem;
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--gradient-gold);
+      color: white;
+      border-color: var(--gold);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+    }
+
+    /* 8. Loading More Animation */
+    .loading-more {
+      text-align: center;
+      margin: 3rem 0;
+      display: none;
+    }
+
+    .loading-more.show {
+      display: block;
+    }
+
+    .loading-spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid var(--gold-light);
+      border-top-color: var(--gold);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 1rem;
+    }
+
+    /* 9. Toast Notification */
+    .toast-notification {
+      position: fixed;
+      bottom: 130px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: white;
+      color: var(--brown-darker);
+      padding: 1.5rem 3rem;
+      border-radius: 60px;
+      border: 4px solid var(--gold);
+      box-shadow: var(--shadow-xl);
+      z-index: 1001;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.5s;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .toast-notification.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .toast-notification i {
+      color: var(--gold);
+      font-size: 2rem;
+    }
+
+    /* 10. Night Mode Toggle */
+    .night-mode-toggle {
+      position: fixed;
+      bottom: 130px;
+      left: 40px;
+      background: var(--gradient-gold);
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      cursor: pointer;
+      z-index: 998;
+      border: 4px solid var(--gold-light);
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+      transition: all 0.4s;
+    }
+
+    .night-mode-toggle:hover {
+      transform: rotate(180deg) scale(1.2);
+    }
+
+    /* Night Mode Styles */
+    body.night-mode {
+      background: #1a1a1a;
+      color: #e0e0e0;
+    }
+
+    body.night-mode .profile-card,
+    body.night-mode .timeline-content,
+    body.night-mode .event-card,
+    body.night-mode .rekening,
+    body.night-mode .wish-item {
+      background: #2d2d2d;
+      color: #e0e0e0;
+    }
+
+    body.night-mode .section-title {
+      color: var(--gold-light);
+    }
+
     /* RESPONSIVE */
     @media (max-width: 1200px) {
       html { font-size: 14px; }
+      
+      .save-date-btn {
+        top: 20px;
+        right: 20px;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+      }
+
+      .weather-widget {
+        top: 20px;
+        left: 20px;
+        padding: 0.8rem 1.5rem;
+      }
     }
 
     @media (max-width: 800px) {
@@ -1326,6 +1663,32 @@
 
       .cover-content {
         padding: 3rem;
+      }
+
+      .save-date-btn {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin: 1rem auto;
+        width: fit-content;
+      }
+
+      .weather-widget {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 1rem auto;
+        width: fit-content;
+      }
+
+      .share-wedding {
+        bottom: 100px;
+        right: 20px;
+      }
+
+      .night-mode-toggle {
+        bottom: 100px;
+        left: 20px;
       }
 
       .countdown-wrapper {
@@ -1347,6 +1710,11 @@
 
       .wish-input-group {
         flex-direction: column;
+      }
+
+      .guest-stats {
+        flex-direction: column;
+        gap: 1.5rem;
       }
     }
 
@@ -1379,6 +1747,16 @@
       .time-box .num {
         font-size: 3rem;
       }
+
+      .gallery-filters {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .filter-btn {
+        width: 100%;
+        text-align: center;
+      }
     }
 
     /* ANIMATIONS */
@@ -1399,8 +1777,13 @@
   <div id="preloader">
     <div class="loader">
       <div class="loader-ring"></div>
-      <div class="loader-text">Agung & Fia</div>
+      <div class="loader-text">Andika & Syakila</div>
     </div>
+  </div>
+
+  <!-- PROGRESS BAR -->
+  <div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
   </div>
 
   <!-- FLOATING ELEMENTS -->
@@ -1410,13 +1793,48 @@
   <div class="music-control" id="musicToggle">
     <i class="fas fa-music" id="musicIcon"></i>
   </div>
-  <div id="youtube-player" style="position: fixed; top: -1000px; left: -1000px; opacity: 0; pointer-events: none;"></div>
+
+  <!-- SAVE THE DATE BUTTON -->
+  <div class="save-date-btn" id="saveDateBtn">
+    <i class="far fa-calendar-check"></i>
+    <span>Save the Date</span>
+  </div>
+
+  <!-- WEATHER WIDGET -->
+  <div class="weather-widget">
+    <i class="fas fa-sun"></i>
+    <div class="weather-info">
+      <span class="weather-temp">28°C</span>
+      <span class="weather-desc">Cerah • Yogyakarta</span>
+    </div>
+  </div>
+
+  <!-- SHARE WEDDING BUTTON -->
+  <div class="share-wedding" id="shareBtn">
+    <i class="fas fa-share-alt"></i>
+    <span class="share-tooltip">Bagikan Undangan</span>
+  </div>
+
+  <!-- NIGHT MODE TOGGLE -->
+  <div class="night-mode-toggle" id="nightModeToggle">
+    <i class="fas fa-moon"></i>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-notification" id="toast">
+    <i class="fas fa-check-circle"></i>
+    <span id="toastMessage">Tersalin!</span>
+  </div>
+
+  <audio id="bgMusic" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3" type="audio/mp3">
+  </audio>
 
   <!-- COVER SECTION -->
   <section class="cover" id="coverSection">
     <div class="cover-content" data-aos="zoom-in" data-aos-duration="2000">
       <span class="great-vibes">The Royal Wedding Of</span>
-      <h1>Agung <br>& Fia</h1>
+      <h1>Andika <br>& Syakila</h1>
       <div class="cover-date">28 . 06 . 2025</div>
       <button class="btn-open" id="openInvitationBtn">
         <i class="fas fa-envelope-open"></i> Buka Undangan
@@ -1437,7 +1855,7 @@
           <span></span>
         </div>
       </div>
-      <h2 class="section-title" data-aos="fade-down">Agung <span>&</span> Fia</h2>
+      <h2 class="section-title" data-aos="fade-down">Andika Pratama <span>&</span> Syakila Ramadhani</h2>
       <p style="text-align: center; font-size: 2.8rem; font-family: 'Great Vibes'; color: var(--gold); margin: 3rem 0; text-shadow: 2px 2px 10px rgba(212,175,55,0.3);">
         “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri”
       </p>
@@ -1450,10 +1868,10 @@
       <div class="couple-container">
         <div class="profile-card" data-aos="flip-left" data-aos-duration="1500">
           <div class="profile-img-wrapper">
-            <img class="profile-img" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop" alt="Agung">
+            <img class="profile-img" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop" alt="Andika">
             <div class="profile-icon"><i class="fas fa-crown"></i></div>
           </div>
-          <h3>Agung</h3>
+          <h3>Andika Pratama</h3>
           <p>Putra pertama dari<br>Bapak Rizki Hidayat & Ibu Siti Aisyah</p>
           <div class="social-links">
             <a href="#"><i class="fab fa-instagram"></i></a>
@@ -1467,10 +1885,10 @@
         </div>
         <div class="profile-card" data-aos="flip-right" data-aos-duration="1500" data-aos-delay="300">
           <div class="profile-img-wrapper">
-            <img class="profile-img" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop" alt="Fia">
+            <img class="profile-img" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop" alt="Syakila">
             <div class="profile-icon"><i class="fas fa-heart"></i></div>
           </div>
-          <h3>Fia</h3>
+          <h3>Syakila Ramadhani</h3>
           <p>Putri kedua dari<br>Bapak Ahmad Fauzi & Ibu Dewi Lestari</p>
           <div class="social-links">
             <a href="#"><i class="fab fa-instagram"></i></a>
@@ -1482,6 +1900,12 @@
       </div>
     </section>
 
+    <!-- GUEST COUNTER -->
+    <div class="guest-counter" data-aos="zoom-in">
+      <i class="fas fa-users"></i>
+      <span id="guestCount">128</span> Tamu Telah Mengkonfirmasi Kehadiran
+    </div>
+
     <!-- COUNTDOWN -->
     <section class="fade-section">
       <h2 class="section-title" data-aos="fade-down">Menuju <span>Hari Bahagia</span></h2>
@@ -1491,7 +1915,6 @@
           <div class="time-box"><span class="num" id="hours">00</span><span class="label">Jam</span></div>
           <div class="time-box"><span class="num" id="minutes">00</span><span class="label">Menit</span></div>
           <div class="time-box"><span class="num" id="seconds">00</span><span class="label">Detik</span></div>
-          <div class="time-box"><span class="num" id="milliseconds">00</span><span class="label">Milidetik</span></div>
         </div>
       </div>
     </section>
@@ -1586,25 +2009,55 @@
       </div>
     </section>
 
-    <!-- GALERI SWIPER -->
+    <!-- GALERI SWIPER dengan FILTER -->
     <section class="fade-section">
       <h2 class="section-title" data-aos="fade-down">Galeri <span>Cinta</span></h2>
+      
+      <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="all">Semua</button>
+        <button class="filter-btn" data-filter="prewed">Pre-wedding</button>
+        <button class="filter-btn" data-filter="engagement">Engagement</button>
+        <button class="filter-btn" data-filter="wedding">Wedding</button>
+      </div>
+
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop" alt="prewed1"></div>
-          <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?q=80&w=1974&auto=format&fit=crop" alt="prewed2"></div>
-          <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1520853504280-249b72dc947c?q=80&w=1974&auto=format&fit=crop" alt="prewed3"></div>
-          <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=2070&auto=format&fit=crop" alt="prewed4"></div>
-          <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1974&auto=format&fit=crop" alt="prewed5"></div>
-          <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=2106&auto=format&fit=crop" alt="prewed6"></div>
-          <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2069&auto=format&fit=crop" alt="prewed7"></div>
-          <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=2070&auto=format&fit=crop" alt="prewed8"></div>
+          <div class="swiper-slide" data-category="prewed"><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop" alt="prewed1"></div>
+          <div class="swiper-slide" data-category="prewed"><img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?q=80&w=1974&auto=format&fit=crop" alt="prewed2"></div>
+          <div class="swiper-slide" data-category="engagement"><img src="https://images.unsplash.com/photo-1520853504280-249b72dc947c?q=80&w=1974&auto=format&fit=crop" alt="engagement1"></div>
+          <div class="swiper-slide" data-category="engagement"><img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=2070&auto=format&fit=crop" alt="engagement2"></div>
+          <div class="swiper-slide" data-category="wedding"><img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1974&auto=format&fit=crop" alt="wedding1"></div>
+          <div class="swiper-slide" data-category="wedding"><img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=2106&auto=format&fit=crop" alt="wedding2"></div>
+          <div class="swiper-slide" data-category="prewed"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2069&auto=format&fit=crop" alt="prewed3"></div>
+          <div class="swiper-slide" data-category="wedding"><img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=2070&auto=format&fit=crop" alt="wedding3"></div>
         </div>
         <div class="swiper-pagination"></div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
       </div>
+
+      <!-- Loading More -->
+      <div class="loading-more" id="loadingMore">
+        <div class="loading-spinner"></div>
+        <p>Memuat foto lainnya...</p>
+      </div>
     </section>
+
+    <!-- GUEST STATS -->
+    <div class="guest-stats" data-aos="zoom-in">
+      <div class="stat-item">
+        <div class="stat-number" id="statHadir">86</div>
+        <div class="stat-label">Akan Hadir</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" id="statTidakHadir">24</div>
+        <div class="stat-label">Tidak Hadir</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" id="statUcapan">156</div>
+        <div class="stat-label">Ucapan</div>
+      </div>
+    </div>
 
     <!-- RSVP -->
     <section class="fade-section">
@@ -1645,7 +2098,7 @@
             <i class="fas fa-university"></i>
             <p class="bank-name">Bank Central Asia</p>
             <p>123 456 7890</p>
-            <p style="font-size: 1.8rem;">a.n. Agung & Fia</p>
+            <p style="font-size: 1.8rem;">a.n. Andika Pratama & Syakila Ramadhani</p>
             <small style="font-size: 1.2rem;">*Tanpa potongan biaya admin</small>
             <button class="btn-copy" id="copyBtn">
               <i class="far fa-copy"></i> Salin Nomor Rekening
@@ -1695,7 +2148,7 @@
     <!-- FOOTER -->
     <footer>
       <p>Terima kasih atas doa & restu yang tulus</p>
-      <p class="great-vibes">Agung & Fia</p>
+      <p class="great-vibes">Andika & Syakila</p>
       <p>28 . 06 . 2025</p>
       <div class="footer-hearts">
         <i class="fas fa-heart"></i>
@@ -1718,41 +2171,7 @@
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="https://www.youtube.com/iframe_api"></script>
   <script>
-    // YouTube Player API functions (must be global)
-    let player;
-    let isPlayerReady = false;
-    let userHasClickedOpen = false;
-
-    function onYouTubeIframeAPIReady() {
-      player = new YT.Player('youtube-player', {
-        height: '1',
-        width: '1',
-        videoId: 'QgaTQ5-XfMM',
-        playerVars: {
-          'autoplay': 0,
-          'controls': 0,
-          'loop': 1,
-          'playlist': 'QgaTQ5-XfMM', // Required for loop to work
-          'rel': 0,
-          'showinfo': 0
-        },
-        events: {
-          'onReady': onPlayerReady
-        }
-      });
-    }
-
-    function onPlayerReady(event) {
-      isPlayerReady = true;
-      event.target.setVolume(50); // Set initial volume
-      if (userHasClickedOpen) {
-        player.playVideo();
-        document.getElementById('musicIcon').className = 'fas fa-music';
-      }
-    }
-
     (function() {
       // Preloader
       window.addEventListener('load', function() {
@@ -1815,20 +2234,32 @@
         loop: true,
       });
 
-      // Music Control
+      // Music
+      const music = document.getElementById('bgMusic');
       const musicIcon = document.getElementById('musicIcon');
       const musicToggle = document.getElementById('musicToggle');
+      let playing = false;
+
+      music.volume = 0.5;
+
+      // Try to play music
+      music.play().then(() => {
+        playing = true;
+        musicIcon.className = 'fas fa-music';
+      }).catch(() => {
+        playing = false;
+        musicIcon.className = 'fas fa-play';
+      });
 
       musicToggle.addEventListener('click', function() {
-        if (!isPlayerReady) return;
-        const playerState = player.getPlayerState();
-        if (playerState === YT.PlayerState.PLAYING || playerState === YT.PlayerState.BUFFERING) {
-            player.pauseVideo();
-            musicIcon.className = 'fas fa-play';
+        if (playing) {
+          music.pause();
+          musicIcon.className = 'fas fa-play';
         } else {
-            player.playVideo();
-            musicIcon.className = 'fas fa-music';
+          music.play();
+          musicIcon.className = 'fas fa-music';
         }
+        playing = !playing;
         
         // Add animation effect
         this.style.transform = 'scale(1.3)';
@@ -1841,12 +2272,6 @@
       document.getElementById('openInvitationBtn').addEventListener('click', function() {
         document.getElementById('invitation-content').classList.add('show');
         document.getElementById('coverSection').style.display = 'none';
-        userHasClickedOpen = true;
-
-        if (isPlayerReady) {
-          player.playVideo();
-          musicIcon.className = 'fas fa-music';
-        }
         
         setTimeout(() => {
           AOS.refresh();
@@ -1871,16 +2296,14 @@
         const hours = Math.floor((diff % (86400000)) / (3600000));
         const minutes = Math.floor((diff % 3600000) / (60000));
         const seconds = Math.floor((diff % 60000) / 1000);
-        const milliseconds = Math.floor((diff % 1000) / 10);
 
         document.getElementById('days').innerText = days.toString().padStart(2, '0');
         document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
         document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
         document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
-        document.getElementById('milliseconds').innerText = milliseconds.toString().padStart(2, '0');
       }
 
-      setInterval(updateCountdown, 50);
+      setInterval(updateCountdown, 1000);
       updateCountdown();
 
       // Scroll animation observer
@@ -1907,7 +2330,7 @@
       swiperSlides.forEach((slide, index) => {
         slide.addEventListener('click', function() {
           const imgSrc = this.querySelector('img').src;
-          const caption = `Foto Pre-wedding ${index + 1}`;
+          const caption = `Foto ${index + 1}`;
           lightboxImg.src = imgSrc;
           lightboxCaption.textContent = caption;
           lightbox.style.display = 'flex';
@@ -1924,39 +2347,58 @@
         }
       });
 
-      // Copy rekening with animation
+      // Copy rekening with toast
+      const toast = document.getElementById('toast');
+      const toastMessage = document.getElementById('toastMessage');
+
+      function showToast(message) {
+        toastMessage.textContent = message;
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 2000);
+      }
+
       document.getElementById('copyBtn').addEventListener('click', function() {
         navigator.clipboard.writeText('1234567890');
-        
-        const originalText = this.innerHTML;
-        this.innerHTML = '<i class="fas fa-check"></i> Tersalin!';
-        this.style.background = 'linear-gradient(135deg, #28a745, #218838)';
-        
-        setTimeout(() => {
-          this.innerHTML = originalText;
-          this.style.background = 'linear-gradient(135deg, var(--gold), #B8860B)';
-        }, 2000);
+        showToast('Nomor rekening berhasil disalin!');
       });
 
-      // RSVP with validation
+      // RSVP with validation and stats update
+      let hadirCount = 86;
+      let tidakHadirCount = 24;
+      let ucapanCount = 156;
+
       document.getElementById('rsvpBtn').addEventListener('click', function() {
         const name = document.getElementById('rsvpName').value.trim();
-        const guest = document.getElementById('rsvpGuest').value;
+        const guest = parseInt(document.getElementById('rsvpGuest').value);
         const attendance = document.getElementById('rsvpAttendance').value;
         
         if (!name) {
-          alert('Mohon isi nama lengkap Anda');
+          showToast('Mohon isi nama lengkap Anda');
           document.getElementById('rsvpName').focus();
           return;
         }
 
         if (!guest || guest < 1) {
-          alert('Mohon isi jumlah tamu dengan benar');
+          showToast('Mohon isi jumlah tamu dengan benar');
           document.getElementById('rsvpGuest').focus();
           return;
         }
 
-        alert(`✨ Terima kasih ${name}!\n\nKonfirmasi: ${attendance}\nJumlah tamu: ${guest} orang\n\nDoa dan restu Anda sangat berarti bagi kami.`);
+        // Update stats
+        if (attendance.includes('Hadir')) {
+          hadirCount += guest;
+          document.getElementById('statHadir').textContent = hadirCount;
+        } else if (attendance.includes('Tidak')) {
+          tidakHadirCount++;
+          document.getElementById('statTidakHadir').textContent = tidakHadirCount;
+        }
+
+        // Update guest count
+        document.getElementById('guestCount').textContent = hadirCount + tidakHadirCount;
+
+        showToast(`Terima kasih ${name}! Konfirmasi Anda telah diterima.`);
 
         // Clear form
         document.getElementById('rsvpName').value = '';
@@ -1964,13 +2406,13 @@
         document.getElementById('rsvpMessage').value = '';
       });
 
-      // Add wish with animation
+      // Add wish with animation and update counter
       document.getElementById('addWishBtn').addEventListener('click', function() {
         const name = document.getElementById('newWishName').value.trim() || 'Tamu Undangan';
         const text = document.getElementById('newWishText').value.trim();
         
         if (!text) {
-          alert('Mohon tulis ucapan/doa Anda');
+          showToast('Mohon tulis ucapan/doa Anda');
           document.getElementById('newWishText').focus();
           return;
         }
@@ -1982,11 +2424,103 @@
         const wishList = document.getElementById('wishList');
         wishList.prepend(wishDiv);
         
-        // Scroll to top of wishlist
-        wishList.scrollTop = 0;
+        // Update ucapan count
+        ucapanCount++;
+        document.getElementById('statUcapan').textContent = ucapanCount;
 
         document.getElementById('newWishName').value = '';
         document.getElementById('newWishText').value = '';
+
+        showToast('Ucapan Anda telah ditambahkan!');
+      });
+
+      // Save the Date
+      document.getElementById('saveDateBtn').addEventListener('click', function() {
+        const date = new Date('2025-06-28T09:00:00');
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        
+        navigator.clipboard.writeText(`Royal Wedding Andika & Syakila - 28 Juni 2025`);
+        showToast('Tanggal pernikahan disalin! 📅');
+      });
+
+      // Share button
+      document.getElementById('shareBtn').addEventListener('click', function() {
+        if (navigator.share) {
+          navigator.share({
+            title: 'Undangan Pernikahan Andika & Syakila',
+            text: 'Royal Wedding - 28 Juni 2025',
+            url: window.location.href,
+          });
+        } else {
+          navigator.clipboard.writeText(window.location.href);
+          showToast('Link undangan disalin!');
+        }
+      });
+
+      // Night mode toggle
+      const nightModeToggle = document.getElementById('nightModeToggle');
+      nightModeToggle.addEventListener('click', function() {
+        document.body.classList.toggle('night-mode');
+        const icon = this.querySelector('i');
+        if (document.body.classList.contains('night-mode')) {
+          icon.className = 'fas fa-sun';
+          showToast('Mode malam diaktifkan');
+        } else {
+          icon.className = 'fas fa-moon';
+          showToast('Mode siang diaktifkan');
+        }
+      });
+
+      // Progress bar
+      window.addEventListener('scroll', function() {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById('progressBar').style.width = scrolled + '%';
+      });
+
+      // Gallery filters
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          
+          const filter = this.dataset.filter;
+          const slides = document.querySelectorAll('.swiper-slide');
+          
+          slides.forEach(slide => {
+            if (filter === 'all' || slide.dataset.category === filter) {
+              slide.style.display = 'block';
+            } else {
+              slide.style.display = 'none';
+            }
+          });
+          
+          swiper.update();
+          showToast(`Menampilkan foto ${this.textContent}`);
+        });
+      });
+
+      // Simulate loading more photos
+      let photoPage = 1;
+      window.addEventListener('scroll', function() {
+        const scrollPosition = window.innerHeight + window.scrollY;
+        const gallerySection = document.querySelector('.swiper');
+        
+        if (gallerySection) {
+          const galleryBottom = gallerySection.offsetTop + gallerySection.offsetHeight;
+          
+          if (scrollPosition > galleryBottom - 200) {
+            document.getElementById('loadingMore').classList.add('show');
+            
+            // Simulate loading
+            setTimeout(() => {
+              document.getElementById('loadingMore').classList.remove('show');
+              photoPage++;
+            }, 2000);
+          }
+        }
       });
 
       // Keyboard support
@@ -2001,10 +2535,13 @@
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
           e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
         });
       });
 
@@ -2016,6 +2553,27 @@
           cover.style.backgroundPositionY = scrolled * 0.5 + 'px';
         }
       });
+
+      // Auto update weather (simulation)
+      function updateWeather() {
+        const weatherIcon = document.querySelector('.weather-widget i');
+        const weatherTemp = document.querySelector('.weather-temp');
+        const weatherDesc = document.querySelector('.weather-desc');
+        
+        const weathers = [
+          { icon: 'fa-sun', temp: '28°C', desc: 'Cerah • Yogyakarta' },
+          { icon: 'fa-cloud-sun', temp: '26°C', desc: 'Berawan • Yogyakarta' },
+          { icon: 'fa-cloud-rain', temp: '24°C', desc: 'Hujan Ringan • Yogyakarta' }
+        ];
+        
+        const randomWeather = weathers[Math.floor(Math.random() * weathers.length)];
+        weatherIcon.className = `fas ${randomWeather.icon}`;
+        weatherTemp.textContent = randomWeather.temp;
+        weatherDesc.textContent = randomWeather.desc;
+      }
+
+      // Update weather every 30 seconds
+      setInterval(updateWeather, 30000);
     })();
   </script>
 </body>
